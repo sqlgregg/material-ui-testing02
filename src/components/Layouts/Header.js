@@ -1,9 +1,10 @@
 import React from "react";
-import { AppBar, Toolbar, IconButton, Button } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import MenuIcon from "@material-ui/icons/Menu";
+import { AppBar, Toolbar } from "@material-ui/core";
+//import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-
+import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
+/*
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
@@ -15,24 +16,24 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1
   }
 }));
-
+*/
 function Header() {
-  const classes = useStyles();
+  //const classes = useStyles();
   return (
     <AppBar position="static">
       <Toolbar>
-        <IconButton
-          edge="start"
-          className={classes.menuButton}
-          color="inherit"
-          aria-label="menu"
+        <Typography variant="h5">Welcome</Typography>
+        <Button
+          component={Link}
+          variant="contained"
+          color="primary"
+          to="/pagetwo"
         >
-          <MenuIcon />
-        </IconButton>
-        <Typography variant="h6" className={classes.title}>
-          Welcome
-        </Typography>
-        <Button color="inherit">Login</Button>
+          Page Two
+        </Button>
+        <Button component={Link} variant="contained" color="primary" to="/">
+          Home
+        </Button>
       </Toolbar>
     </AppBar>
   );
